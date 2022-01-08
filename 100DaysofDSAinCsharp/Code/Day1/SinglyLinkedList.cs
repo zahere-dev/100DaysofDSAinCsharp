@@ -27,9 +27,10 @@ namespace _100DaysofDSAinCsharp.Code.Day1
         }
 
 
+        //time complexity = O(1); space complexity = O(1)
         public void addLast(int e)
         {
-            Node newNode = new Node(e, null);
+            Node newNode = new Node(e);
 
             if (isEmtpty())
             {
@@ -44,9 +45,10 @@ namespace _100DaysofDSAinCsharp.Code.Day1
             size++;
         }
 
+        //time complexity = O(1); space complexity = O(1)
         public void addFirst(int e)
         {
-            Node newNode = new Node(e, null);
+            Node newNode = new Node(e);
 
             if (isEmtpty())
             {
@@ -63,10 +65,10 @@ namespace _100DaysofDSAinCsharp.Code.Day1
 
         }
 
-
+        //time complexity = O(n); space complexity = O(1)
         public void addAnywhere(int e, int position)
         {
-            Node newNode = new Node(e, null);
+            Node newNode = new Node(e);
             if (isEmtpty())
             {
                 head = newNode;
@@ -84,6 +86,7 @@ namespace _100DaysofDSAinCsharp.Code.Day1
             }
         }
 
+        //time complexity = O(1); space complexity = O(1)
         public void removeLast()
         {
             if (!isEmtpty())
@@ -105,6 +108,7 @@ namespace _100DaysofDSAinCsharp.Code.Day1
             }
         }
 
+        //time complexity = O(1); space complexity = O(1)
         public void removeFirst()
         {
             if (!isEmtpty())
@@ -114,6 +118,7 @@ namespace _100DaysofDSAinCsharp.Code.Day1
             }
         }
 
+        //time complexity > worst case O(n); space complexity = O(1)
         public void removeAtGivenPosition(int position)
         {
             if (isEmtpty() || position < 0 || position > size)
@@ -144,6 +149,8 @@ namespace _100DaysofDSAinCsharp.Code.Day1
             }
         }
 
+
+        //time complexity = O(n); space complexity = O(1)
         public void removeDuplicates()
         {
             if (!isEmtpty())
@@ -171,6 +178,7 @@ namespace _100DaysofDSAinCsharp.Code.Day1
 
         }
 
+        //time complexity = O(n); space complexity = O(1)
         public void reverse_approach1()
         {
             if (!isEmtpty())
@@ -188,7 +196,7 @@ namespace _100DaysofDSAinCsharp.Code.Day1
             }
         }
 
-
+        //time complexity = O(n); space complexity = O(1)
         public void display()
         {
             if (!isEmtpty())

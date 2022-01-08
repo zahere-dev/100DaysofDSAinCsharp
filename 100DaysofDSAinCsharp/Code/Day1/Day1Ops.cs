@@ -70,8 +70,8 @@
             sll.reverse_approach1();
             sll.display();
 
-            //sll.removeAtGivenPosition(11);
-            //sll.display();
+            sll.removeAtGivenPosition(11);
+            sll.display();
 
         }
 

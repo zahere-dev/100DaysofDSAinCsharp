@@ -5,10 +5,10 @@
         public int element;
         public Node next;
 
-        public Node(int i, Node n)
+        public Node(int i)
         {
             element = i;
-            next = n;
+            next = null;
         }
 
     }
