@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "100DaysofDSAinCsharp/1.0.0": {
+        "runtime": {
+          "100DaysofDSAinCsharp.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "100DaysofDSAinCsharp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
