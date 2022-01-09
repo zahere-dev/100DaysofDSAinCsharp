@@ -21,7 +21,7 @@ namespace _100DaysofDSAinCsharp.Code.Day1
             return size;
         }
 
-        public bool isEmtpty()
+        public bool isEmpty()
         {
             return size == 0;
         }
@@ -32,7 +32,7 @@ namespace _100DaysofDSAinCsharp.Code.Day1
         {
             Node newNode = new Node(e);
 
-            if (isEmtpty())
+            if (isEmpty())
             {
                 head = newNode;
                 tail = newNode;
@@ -50,7 +50,7 @@ namespace _100DaysofDSAinCsharp.Code.Day1
         {
             Node newNode = new Node(e);
 
-            if (isEmtpty())
+            if (isEmpty())
             {
                 head = newNode;
                 tail = newNode;
@@ -69,7 +69,7 @@ namespace _100DaysofDSAinCsharp.Code.Day1
         public void addAnywhere(int e, int position)
         {
             Node newNode = new Node(e);
-            if (isEmtpty() && position == 0)
+            if (isEmpty() || position == 0)
             {
                 addFirst(position);
             }
@@ -95,39 +95,37 @@ namespace _100DaysofDSAinCsharp.Code.Day1
         //time complexity = O(1); space complexity = O(1)
         public void removeLast()
         {
-            if (!isEmtpty())
+            if (isEmpty()) return;
+
+            var currentNode = head;
+            int counter = 0;
+            while (currentNode != null)
             {
-                var currentNode = head;
-                int counter = 0;
-                while (currentNode != null)
+                if (counter == size - 1)
                 {
-                    if (counter == size - 1)
-                    {
-                        currentNode.next = null;
-                        tail = currentNode;
-                        break;
-                    }
-                    currentNode = currentNode.next;
-                    counter++;
+                    currentNode.next = null;
+                    tail = currentNode;
+                    break;
                 }
-                size--;
+                currentNode = currentNode.next;
+                counter++;
             }
+            size--;
+
         }
 
         //time complexity = O(1); space complexity = O(1)
         public void removeFirst()
         {
-            if (!isEmtpty())
-            {
-                head = head.next;
-                size--;
-            }
+            if (isEmpty()) return;
+            head = head.next;
+            size--;
         }
 
         //time complexity > worst case O(n); space complexity = O(1)
         public void removeAtGivenPosition(int position)
         {
-            if (isEmtpty() || position < 0 || position > size)
+            if (isEmpty() || position < 0 || position > size)
             {
                 return;
             }
@@ -158,7 +156,7 @@ namespace _100DaysofDSAinCsharp.Code.Day1
         //time complexity = O(n); space complexity = O(1)
         public void removeDuplicates()
         {
-            if (!isEmtpty())
+            if (!isEmpty())
             {
                 var hasMap = new Dictionary<int, int>();
                 var currentNode = head;
@@ -186,7 +184,7 @@ namespace _100DaysofDSAinCsharp.Code.Day1
         //time complexity = O(n); space complexity = O(1)
         public void reverse_approach1()
         {
-            if (!isEmtpty())
+            if (!isEmpty())
             {
                 var currentNode = head;
                 Node prevNode = null;
@@ -205,7 +203,7 @@ namespace _100DaysofDSAinCsharp.Code.Day1
         public int findElementByValue(int element)
         {
             int counter = 0;
-            if (!isEmtpty())
+            if (!isEmpty())
             {
                 var currentNode = head;
 
@@ -226,7 +224,7 @@ namespace _100DaysofDSAinCsharp.Code.Day1
         public int findElementbyPosition(int position)
         {
             int counter = 0;
-            if (!isEmtpty())
+            if (!isEmpty())
             {
                 var currentNode = head;
                 while (currentNode != null)
@@ -243,7 +241,7 @@ namespace _100DaysofDSAinCsharp.Code.Day1
         public void insertingElementsInSortedOrder(int e)
         {
 
-            if (isEmtpty())
+            if (isEmpty())
             {
                 return;
             }
@@ -272,7 +270,7 @@ namespace _100DaysofDSAinCsharp.Code.Day1
         //time complexity = O(n); space complexity = O(1)
         public void display()
         {
-            if (!isEmtpty())
+            if (!isEmpty())
             {
                 var currentNode = head;
                 while (currentNode != null)

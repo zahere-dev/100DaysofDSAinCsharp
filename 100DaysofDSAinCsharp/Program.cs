@@ -1,4 +1,4 @@
-﻿using _100DaysofDSAinCsharp.Code.Day1;
+﻿using _100DaysofDSAinCsharp.Code.Day2;
 
 namespace _100DaysofDSAinCsharp
 {
@@ -6,7 +6,8 @@ namespace _100DaysofDSAinCsharp
     {
         private static void Main(string[] args)
         {
-            Day1Ops.Run();
+            //Day1Ops.Run();
+            Day2Ops.Run();
 
         }
     }
