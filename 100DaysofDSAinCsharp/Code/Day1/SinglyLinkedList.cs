@@ -69,20 +69,26 @@ namespace _100DaysofDSAinCsharp.Code.Day1
         public void addAnywhere(int e, int position)
         {
             Node newNode = new Node(e);
-            if (isEmtpty())
+            if (isEmtpty() && position == 0)
             {
-                head = newNode;
-                tail = newNode;
+                addFirst(position);
             }
             else
             {
                 var currentNode = head;
                 int counter = 0;
-                while (counter != 0)
+                while (currentNode != null)
                 {
+                    if (counter == position - 1)
+                    {
+                        newNode.next = currentNode.next;
+                        currentNode.next = newNode;
+                    }
+
                     currentNode = currentNode.next;
                     counter++;
                 }
+                size++;
             }
         }
 
@@ -131,7 +137,6 @@ namespace _100DaysofDSAinCsharp.Code.Day1
             }
             else
             {
-
                 var currentNode = head;
                 int counter = 0;
                 while (currentNode != null)
@@ -194,6 +199,74 @@ namespace _100DaysofDSAinCsharp.Code.Day1
                 }
                 head = prevNode;
             }
+        }
+
+        //returns the position of first matching element
+        public int findElementByValue(int element)
+        {
+            int counter = 0;
+            if (!isEmtpty())
+            {
+                var currentNode = head;
+
+                while (currentNode != null)
+                {
+                    if (currentNode.element == element) return counter;
+                    currentNode = currentNode.next;
+                    counter++;
+
+                }
+
+            }
+
+            return -1;
+        }
+
+        //returns the value of first matching element
+        public int findElementbyPosition(int position)
+        {
+            int counter = 0;
+            if (!isEmtpty())
+            {
+                var currentNode = head;
+                while (currentNode != null)
+                {
+                    if (counter == position) return currentNode.element;
+                    currentNode = currentNode.next;
+                    counter++;
+                }
+            }
+            return -1;
+        }
+
+
+        public void insertingElementsInSortedOrder(int e)
+        {
+
+            if (isEmtpty())
+            {
+                return;
+            }
+
+            if (size == 0 && e <= head.element)
+            {
+                addFirst(e);
+                return;
+            }
+
+            var currentNode = head;
+            int counter = 0;
+            while (currentNode != null)
+            {
+                if (e <= currentNode.element)
+                {
+                    addAnywhere(e, counter);
+                    counter++;
+                }
+                currentNode = currentNode.next;
+                counter++;
+            }
+
         }
 
         //time complexity = O(n); space complexity = O(1)

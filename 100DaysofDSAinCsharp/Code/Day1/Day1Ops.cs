@@ -73,6 +73,14 @@
             sll.removeAtGivenPosition(11);
             sll.display();
 
+
+            System.Console.WriteLine(sll.findElementByValue(3));
+            System.Console.WriteLine(sll.findElementbyPosition(3));
+
+            sll.insertingElementsInSortedOrder(8);
+            sll.display();
+
+
         }
 
 
