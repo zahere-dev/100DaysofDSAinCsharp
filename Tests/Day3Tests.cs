@@ -1,11 +1,14 @@
 ﻿using _100DaysofDSAinCsharp.src.Day1;
 using _100DaysofDSAinCsharp.src.Day2;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace _100DaysofDSAinCsharp.src.Day3
+namespace Tests
 {
-    public class Day3Ops
+    [TestClass]
+    public class Day3Tests
     {
-        public static void Run()
+        [TestMethod]
+        public void TestaddNodes()
         {
             SinglyLinkedList sll = new SinglyLinkedList();
             sll.addLast(1);
@@ -14,6 +17,7 @@ namespace _100DaysofDSAinCsharp.src.Day3
             sll.display();
             sll.reverseLinkedListRecursively();
             sll.display();
+            Assert.AreEqual(3, sll.findElementbyPosition(0));
 
 
             CircularLinkedList cll = new CircularLinkedList();
@@ -23,7 +27,7 @@ namespace _100DaysofDSAinCsharp.src.Day3
             cll.display();
             cll.reverseLinkedListRecursively();
             cll.display();
-
+            Assert.AreEqual(6, cll.findElementbyPosition(0));
 
             DoublyLinkedList dll = new DoublyLinkedList();
             dll.addLast(7);
@@ -32,7 +36,9 @@ namespace _100DaysofDSAinCsharp.src.Day3
             dll.display();
             dll.reverseLinkedListRecursively();
             dll.display();
-
+            Assert.AreEqual(9, dll.findElementbyPosition(0));
         }
+
+
     }
 }

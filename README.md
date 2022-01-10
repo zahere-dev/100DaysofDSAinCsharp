@@ -7,8 +7,11 @@ Hi there! My name is Zahere. I am a journalist-turned-Software Engineer striving
 - 10 days of linkedlist
   - [x] Day1 - 8/1/2022 -> Construct a SinglyLinkedList
   - [x] Day2 - 9/1/2022 -> Construct a DoublyLinkedList and CircularLinkedList
-  - [ ] Day3 - 10/1/2022 -> Reverse Operations On Linked List
-      - [ ] Reverse Linked List - Iteratively and Recursively
+  - [x] Day3 - 10/1/2022 -> Reverse Operations On Linked List
+      - [x] Reverse Singly Linked List - Iteratively and Recursively
+      - [x] Reverse Circular Linked List - Iteratively and Recursively
+      - [x] Reverse Doubly Linked List - Iteratively and Recursively
+  - [ ] Day4 - 11/1/2022 -> Advanced Reverse Operations On Linked List
       - [ ] K-Reverse Linked List - Iteratively and Recursively
       - [ ] Add 2 LinkedList
       - [ ] Rearrange LinkedList

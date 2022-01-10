@@ -200,7 +200,43 @@ namespace _100DaysofDSAinCsharp.src.Day2
             head = prevNode;
 
         }
+        public NodeDL reverseRecursively(NodeDL currentNode, NodeDL prevNode, int counter)
+        {
+            if (counter >= length()) return prevNode;
+            var nextNode = currentNode.next;
+            currentNode.next = prevNode;
+            prevNode = currentNode;
+            currentNode = nextNode;
+            counter++;
+            return reverseRecursively(currentNode, prevNode, counter);
 
+        }
+
+        //time complexity = O(n); space complexity = O(1)
+        public void reverseLinkedListRecursively()
+        {
+            var currentNode = head;
+            int counter = 0;
+            head = reverseRecursively(currentNode, null, counter);
+        }
+        public int findElementbyPosition(int position)
+        {
+
+            if (isEmpty()) return -1;
+
+            if (position < 0 || position > length()) return -1;
+
+            var currentNode = head;
+            int counter = 0;
+            while (counter < length())
+            {
+                if (counter == position) return currentNode.element;
+                currentNode = currentNode.next;
+                counter++;
+            }
+            return -1;
+
+        }
 
         public void display()
         {
