@@ -1,15 +1,29 @@
-﻿using _100DaysofDSAinCsharp.Code.Day1;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace _100DaysofDSAinCsharp.Code.Day2
+namespace _100DaysofDSAinCsharp.src.Day2
 {
-    public class CircularLinkedList
+    public class NodeDL
     {
-        private Node head;
-        private Node tail;
+        public int element;
+        public NodeDL next;
+        public NodeDL previous;
+        public NodeDL(int e)
+        {
+            element = e;
+            next = null;
+            previous = null;
+
+        }
+    }
+
+
+    public class DoublyLinkedList
+    {
+        private NodeDL head;
+        private NodeDL tail;
         private int size;
 
-        public CircularLinkedList()
+        public DoublyLinkedList()
         {
             head = null;
             tail = null;
@@ -26,97 +40,87 @@ namespace _100DaysofDSAinCsharp.Code.Day2
             return size == 0;
         }
 
-        //time complexity O(1); space complexity O(1)
         public void addFirst(int e)
         {
-            Node newNode = new Node(e);
-
+            NodeDL newNode = new NodeDL(e);
             if (isEmpty())
             {
-                newNode.next = newNode;
                 head = newNode;
                 tail = newNode;
+                tail.previous = newNode;
             }
             else
             {
                 newNode.next = head;
+                head.previous = newNode;
                 head = newNode;
-                tail.next = newNode;
             }
-
             size++;
         }
 
-        //time complexity O(1); space complexity O(1)
         public void addLast(int e)
         {
-            Node newNode = new Node(e);
-
-            if (isEmpty()) addFirst(e);
-
-            newNode.next = tail.next;
-            tail.next = newNode;
-            tail = newNode;
-            size++;
-        }
-
-
-        //time complexity = O(n); space complexity = O(1)
-        public void addAnywhere(int e, int position)
-        {
-
-            if (isEmpty() || position == 0)
+            NodeDL newNode = new NodeDL(e);
+            if (isEmpty())
             {
                 addFirst(e);
             }
             else
             {
-                Node newNode = new Node(e);
+                newNode.previous = tail;
+                tail.next = newNode;
+                tail = newNode;
+                size++;
+            }
+
+        }
+
+
+        public void addAnywhere(int e, int position)
+        {
+            if (position == 0)
+            {
+                addFirst(e);
+            }
+            else if (position > length() || position < 0)
+            {
+                return;
+            }
+            else
+            {
+                NodeDL newNode = new NodeDL(e);
+
                 var currentNode = head;
                 int counter = 0;
-                while (counter < length())
+                while (counter != position - 1)
                 {
-                    if (counter == position - 1)
-                    {
-                        newNode.next = currentNode.next;
-                        currentNode.next = newNode;
-                    }
-
                     currentNode = currentNode.next;
                     counter++;
                 }
+                newNode.next = currentNode.next;
+                newNode.previous = currentNode;
+                currentNode.next = newNode;
+                currentNode = newNode;
                 size++;
             }
+
+
+
         }
 
-
-
-        //time complexity = O(1); space complexity = O(1)
-        public void removeLast()
-        {
-            if (isEmpty()) return;
-
-            var currentNode = head;
-            int counter = 0;
-            while (counter < length() - 1)
-            {
-                currentNode = currentNode.next;
-                counter++;
-            }
-
-            tail = currentNode.next;
-
-
-            size--;
-        }
-
-        //time complexity = O(1); space complexity = O(1)
         public void removeFirst()
         {
             if (isEmpty()) return;
-
             head = head.next;
-            tail.next = head;
+            head.previous = null;
+            size--;
+        }
+
+        public void removeLast()
+        {
+            if (isEmpty()) return;
+            tail = tail.previous;
+            tail.next = null;
             size--;
         }
 
@@ -139,15 +143,14 @@ namespace _100DaysofDSAinCsharp.Code.Day2
             {
                 var currentNode = head;
                 int counter = 0;
-                while (counter < length())
+                while (counter != position - 1)
                 {
-                    if (counter == position - 1)
-                    {
-                        currentNode.next = currentNode.next.next;
-                    }
                     currentNode = currentNode.next;
                     counter++;
                 }
+                var nextNode = currentNode.next;
+                currentNode.next = nextNode.next;
+                nextNode.previous = currentNode;
                 size--;
             }
         }
@@ -161,7 +164,7 @@ namespace _100DaysofDSAinCsharp.Code.Day2
             var hasMap = new Dictionary<int, int>();
             var currentNode = head;
             int counter = 0;
-            while (counter < length())
+            while (currentNode != null)
             {
                 if (hasMap.ContainsKey(currentNode.element))
                 {
@@ -184,9 +187,9 @@ namespace _100DaysofDSAinCsharp.Code.Day2
             if (isEmpty()) return;
 
             var currentNode = head;
-            Node prevNode = null;
+            NodeDL prevNode = null;
             int counter = 0;
-            while (counter < length())
+            while (currentNode != null)
             {
                 var nextNode = currentNode.next;
                 currentNode.next = prevNode;
@@ -198,20 +201,21 @@ namespace _100DaysofDSAinCsharp.Code.Day2
 
         }
 
-        //time complexity O(n); space complexity O(1)
+
         public void display()
         {
             if (isEmpty()) return;
 
-            Node currentNode = head;
-            int counter = 0;
-            while (counter < size)
+            var currentNode = head;
+
+            while (currentNode != null)
             {
-                System.Console.Write($"{currentNode.element}-->");
+                System.Console.Write($"{currentNode.element} <-->");
                 currentNode = currentNode.next;
-                counter++;
             }
             System.Console.WriteLine();
+
+
         }
 
     }

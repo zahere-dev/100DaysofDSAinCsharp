@@ -1,6 +1,6 @@
 # #100DaysofDSAinCSharp
 
-Hi! My name is Zahere. I am a journalist-turned-Software Engineer striving to be a better coder everyday. In my pursuit to be a better problem-solver, I have set a challenge to practice Data Structure and Algorithms everyday for the next 100 days. Following is my plan. 
+Hi there! My name is Zahere. I am a journalist-turned-Software Engineer striving to be a better coder everyday. In my pursuit to be a better problem-solver, I have set myself a challenge to practice Data Structures and Algorithms everyday for the next 100 days. Following is my plan. 
 
 ## Roadmap
 **Start Date -> 8/1/2022** -----> **End Date -> 27/4/2022**

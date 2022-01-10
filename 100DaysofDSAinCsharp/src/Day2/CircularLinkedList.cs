@@ -1,29 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using _100DaysofDSAinCsharp.src.Day1;
+using System.Collections.Generic;
 
-namespace _100DaysofDSAinCsharp.Code.Day2
+namespace _100DaysofDSAinCsharp.src.Day2
 {
-    public class NodeDL
+    public class CircularLinkedList
     {
-        public int element;
-        public NodeDL next;
-        public NodeDL previous;
-        public NodeDL(int e)
-        {
-            element = e;
-            next = null;
-            previous = null;
-
-        }
-    }
-
-
-    public class DoublyLinkedList
-    {
-        private NodeDL head;
-        private NodeDL tail;
+        private Node head;
+        private Node tail;
         private int size;
 
-        public DoublyLinkedList()
+        public CircularLinkedList()
         {
             head = null;
             tail = null;
@@ -40,45 +26,53 @@ namespace _100DaysofDSAinCsharp.Code.Day2
             return size == 0;
         }
 
+        //time complexity O(1); space complexity O(1)
         public void addFirst(int e)
         {
-            NodeDL newNode = new NodeDL(e);
+            Node newNode = new Node(e);
+
             if (isEmpty())
             {
+                newNode.next = newNode;
                 head = newNode;
                 tail = newNode;
-                tail.previous = newNode;
             }
             else
             {
                 newNode.next = head;
-                head.previous = newNode;
                 head = newNode;
+                tail.next = newNode;
             }
+
             size++;
         }
 
+        //time complexity O(1); space complexity O(1)
         public void addLast(int e)
         {
-            NodeDL newNode = new NodeDL(e);
+            Node newNode = new Node(e);
+
             if (isEmpty())
             {
                 addFirst(e);
             }
             else
             {
-                newNode.previous = tail;
+                newNode.next = tail.next;
                 tail.next = newNode;
                 tail = newNode;
                 size++;
             }
 
+
         }
 
 
+        //time complexity = O(n); space complexity = O(1)
         public void addAnywhere(int e, int position)
         {
-            if (position == 0)
+
+            if (isEmpty() || position == 0)
             {
                 addFirst(e);
             }
@@ -88,39 +82,49 @@ namespace _100DaysofDSAinCsharp.Code.Day2
             }
             else
             {
-                NodeDL newNode = new NodeDL(e);
-
+                Node newNode = new Node(e);
                 var currentNode = head;
                 int counter = 0;
                 while (counter != position - 1)
                 {
+
                     currentNode = currentNode.next;
                     counter++;
                 }
                 newNode.next = currentNode.next;
-                newNode.previous = currentNode;
                 currentNode.next = newNode;
-                currentNode = newNode;
                 size++;
             }
-
-
-
         }
 
-        public void removeFirst()
-        {
-            if (isEmpty()) return;
-            head = head.next;
-            head.previous = null;
-            size--;
-        }
 
+
+        //time complexity = O(1); space complexity = O(1)
         public void removeLast()
         {
             if (isEmpty()) return;
-            tail = tail.previous;
-            tail.next = null;
+
+            var currentNode = head;
+            int counter = 0;
+            while (counter < length() - 1)
+            {
+                currentNode = currentNode.next;
+                counter++;
+            }
+
+            tail = currentNode.next;
+
+
+            size--;
+        }
+
+        //time complexity = O(1); space complexity = O(1)
+        public void removeFirst()
+        {
+            if (isEmpty()) return;
+
+            head = head.next;
+            tail.next = head;
             size--;
         }
 
@@ -143,14 +147,15 @@ namespace _100DaysofDSAinCsharp.Code.Day2
             {
                 var currentNode = head;
                 int counter = 0;
-                while (counter != position - 1)
+                while (counter < length())
                 {
+                    if (counter == position - 1)
+                    {
+                        currentNode.next = currentNode.next.next;
+                    }
                     currentNode = currentNode.next;
                     counter++;
                 }
-                var nextNode = currentNode.next;
-                currentNode.next = nextNode.next;
-                nextNode.previous = currentNode;
                 size--;
             }
         }
@@ -164,7 +169,7 @@ namespace _100DaysofDSAinCsharp.Code.Day2
             var hasMap = new Dictionary<int, int>();
             var currentNode = head;
             int counter = 0;
-            while (currentNode != null)
+            while (counter < length())
             {
                 if (hasMap.ContainsKey(currentNode.element))
                 {
@@ -187,9 +192,9 @@ namespace _100DaysofDSAinCsharp.Code.Day2
             if (isEmpty()) return;
 
             var currentNode = head;
-            NodeDL prevNode = null;
+            Node prevNode = null;
             int counter = 0;
-            while (currentNode != null)
+            while (counter < length())
             {
                 var nextNode = currentNode.next;
                 currentNode.next = prevNode;
@@ -202,20 +207,42 @@ namespace _100DaysofDSAinCsharp.Code.Day2
         }
 
 
+        public Node reverseRecursively(Node currentNode, Node prevNode)
+        {
+            if (currentNode == null) return prevNode;
+            var nextNode = currentNode.next;
+            currentNode.next = prevNode;
+            prevNode = currentNode;
+            currentNode = nextNode;
+            return reverseRecursively(currentNode, prevNode);
+
+        }
+
+
+
+
+
+        //time complexity = O(n); space complexity = O(1)
+        public void reverseLinkedListRecursively()
+        {
+            var currentNode = head;
+            head = reverseRecursively(currentNode, null);
+        }
+
+        //time complexity O(n); space complexity O(1)
         public void display()
         {
             if (isEmpty()) return;
 
-            var currentNode = head;
-
-            while (currentNode != null)
+            Node currentNode = head;
+            int counter = 0;
+            while (counter < size)
             {
-                System.Console.Write($"{currentNode.element} <-->");
+                System.Console.Write($"{currentNode.element}-->");
                 currentNode = currentNode.next;
+                counter++;
             }
             System.Console.WriteLine();
-
-
         }
 
     }

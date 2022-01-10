@@ -1,4 +1,4 @@
-﻿namespace _100DaysofDSAinCsharp.Code.Day1
+﻿namespace _100DaysofDSAinCsharp.src.Day1
 {
     public class Day1Ops
     {
@@ -67,6 +67,7 @@
             sll.display();
 
             System.Console.WriteLine(sll.length());
+            System.Console.WriteLine("Reverse Below");
             sll.reverse_approach1();
             sll.display();
 
@@ -76,6 +77,8 @@
 
             System.Console.WriteLine(sll.findElementByValue(3));
             System.Console.WriteLine(sll.findElementbyPosition(3));
+
+            System.Console.WriteLine(sll.findElementByValueRecursively(3));
 
             sll.insertingElementsInSortedOrder(8);
             sll.display();

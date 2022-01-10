@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace _100DaysofDSAinCsharp.Code.Day1
+namespace _100DaysofDSAinCsharp.src.Day1
 {
     public class SinglyLinkedList
     {
@@ -199,6 +199,24 @@ namespace _100DaysofDSAinCsharp.Code.Day1
             }
         }
 
+        private Node reverseRecursively(Node current, Node previous)
+        {
+            if (current == null) return previous;
+            var next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+            return reverseRecursively(current, previous);
+        }
+
+        public void reverseLinkedListRecursively()
+        {
+            var currentNode = head;
+            head = reverseRecursively(currentNode, null);
+        }
+
+
+
         //returns the position of first matching element
         public int findElementByValue(int element)
         {
@@ -218,6 +236,20 @@ namespace _100DaysofDSAinCsharp.Code.Day1
             }
 
             return -1;
+        }
+
+
+        private bool recursiveFunc(int elementToFind, Node node)
+        {
+            if (node == null) return false;
+            if (node.element == elementToFind) return true;
+
+            return recursiveFunc(elementToFind, node.next);
+        }
+
+        public bool findElementByValueRecursively(int elementToFind)
+        {
+            return recursiveFunc(elementToFind, head);
         }
 
         //returns the value of first matching element

@@ -1,4 +1,4 @@
-﻿namespace _100DaysofDSAinCsharp.Code.Day1
+﻿namespace _100DaysofDSAinCsharp.src.Day1
 {
     public class Node
     {

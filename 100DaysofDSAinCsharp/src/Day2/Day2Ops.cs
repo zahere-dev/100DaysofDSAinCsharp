@@ -1,4 +1,4 @@
-﻿namespace _100DaysofDSAinCsharp.Code.Day2
+﻿namespace _100DaysofDSAinCsharp.src.Day2
 {
     public class Day2Ops
     {
