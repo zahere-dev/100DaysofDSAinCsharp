@@ -11,8 +11,11 @@ Hi there! My name is Zahere. I am a journalist-turned-Software Engineer striving
       - [x] Reverse Singly Linked List - Iteratively and Recursively
       - [x] Reverse Circular Linked List - Iteratively and Recursively
       - [x] Reverse Doubly Linked List - Iteratively and Recursively
-  - [ ] Day4 - 11/1/2022 -> Advanced Reverse Operations On Linked List
-      - [ ] K-Reverse Linked List - Iteratively and Recursively
+  - [x] Day4 - 11/1/2022 -> Advanced Reverse Operations On Linked List
+      - [x] K-Reverse Singly Linked List - Iteratively and Recursively
+      - [x] K-Reverse Circular Linked List - Iteratively and Recursively
+      - [x] K-Reverse Dobuly Linked List - Iteratively and Recursively
+  - [ ] Day5 - 12/1/2022 -> Advanced Operations On Linked List
       - [ ] Add 2 LinkedList
       - [ ] Rearrange LinkedList
 - 15 days of Recursion and BackTracking

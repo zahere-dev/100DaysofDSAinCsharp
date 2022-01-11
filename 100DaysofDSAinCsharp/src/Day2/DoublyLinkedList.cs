@@ -237,6 +237,90 @@ namespace _100DaysofDSAinCsharp.src.Day2
             return -1;
 
         }
+        public void reverseKGroupOnTheSameList(int k)
+        {
+            // input > 1-->2-->3-->4-->5-->6-->7-->
+            //Result > 2 
+            if (head == null || k == 1) return;
+
+
+            var dummyNode = new NodeDL(0)
+            {
+                /// test
+                next = head
+            };
+
+            var cur = dummyNode;
+            var nex = dummyNode;
+            var pre = dummyNode;
+
+            int count = size;
+
+
+            while (count >= k)
+            {
+                cur = pre.next;
+                nex = cur.next;
+                for (int i = 1; i < k; i++)
+                {
+                    cur.next = nex.next;
+                    nex.next = pre.next;
+                    pre.next = nex;
+                    nex = cur.next;
+                }
+                pre = cur;
+                count -= k;
+
+                //display();
+
+            }
+            head = dummyNode.next;
+            //tail.next = head;
+
+        }
+
+
+        public void reverseKGroupRecursively(int k, int size, NodeDL cur, NodeDL nex, NodeDL pre, NodeDL dummyNode)
+        {
+            // input > 1-->2-->3-->4-->5-->6-->7-->
+            //Result > 2 
+            if (head == null || k == 1) return;
+            if (head != null && dummyNode == null)
+            {
+                dummyNode = new NodeDL(0)
+                {
+                    next = head
+                };
+                cur = dummyNode;
+                nex = dummyNode;
+                pre = dummyNode;
+
+            }
+            if (size < k)
+            {
+                head = dummyNode.next;
+                return;
+            }
+            else
+            {
+                cur = pre.next;
+                nex = cur.next;
+                for (int i = 1; i < k; i++)
+                {
+                    cur.next = nex.next;
+                    nex.next = pre.next;
+                    pre.next = nex;
+                    nex = cur.next;
+                }
+                pre = cur;
+                size -= k;
+
+            }
+
+
+            reverseKGroupRecursively(k, size, cur, nex, pre, dummyNode);
+        }
+
 
         public void display()
         {

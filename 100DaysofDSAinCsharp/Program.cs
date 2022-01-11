@@ -1,4 +1,4 @@
-﻿using _100DaysofDSAinCsharp.src.Day3;
+﻿using _100DaysofDSAinCsharp.src.Day4;
 
 namespace _100DaysofDSAinCsharp
 {
@@ -8,7 +8,8 @@ namespace _100DaysofDSAinCsharp
         {
             //Day1Ops.Run();
             //Day2Ops.Run();
-            Day3Ops.Run();
+            //Day3Ops.Run();
+            Day4Ops.Run();
 
         }
     }

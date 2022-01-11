@@ -47,6 +47,13 @@ namespace _100DaysofDSAinCsharp.src.Day2
             size++;
         }
 
+        public int getFirst()
+        {
+            if (isEmpty()) return -1;
+            return head.element;
+        }
+
+
         //time complexity O(1); space complexity O(1)
         public void addLast(int e)
         {
@@ -246,6 +253,135 @@ namespace _100DaysofDSAinCsharp.src.Day2
             return -1;
 
         }
+
+        public void reverseKGroupOnTheSameList(int k)
+        {
+            // input > 1-->2-->3-->4-->5-->6-->7-->
+            //Result > 2 
+            if (head == null || k == 1) return;
+
+
+            var dummyNode = new Node(0)
+            {
+                /// test
+                next = head
+            };
+
+            var cur = dummyNode;
+            var nex = dummyNode;
+            var pre = dummyNode;
+
+            int count = size;
+
+
+            while (count >= k)
+            {
+                cur = pre.next;
+                nex = cur.next;
+                for (int i = 1; i < k; i++)
+                {
+                    cur.next = nex.next;
+                    nex.next = pre.next;
+                    pre.next = nex;
+                    nex = cur.next;
+                }
+                pre = cur;
+                count -= k;
+
+                //display();
+
+            }
+            head = dummyNode.next;
+            //tail.next = head;
+
+        }
+
+
+        public void reverseKGroupByCreatingNewList(int k)
+        {
+            CircularLinkedList prevList = null;
+
+            while (size > 0)
+            {
+                CircularLinkedList currentList = new CircularLinkedList();
+
+                if (size >= k)
+                {
+                    for (int i = 0; i < k; i++)
+                    {
+                        int val = getFirst();
+                        currentList.addFirst(val);
+                        removeFirst();
+                    }
+
+                }
+                else
+                {
+                    int s = length();
+                    for (int i = 0; i < s; i++)
+                    {
+                        int val = getFirst();
+                        currentList.addLast(val);
+                        removeFirst();
+                    }
+                }
+
+                if (prevList == null) prevList = currentList;
+                else
+                {
+                    prevList.tail.next = currentList.head;
+                    prevList.tail = currentList.tail;
+                    prevList.size += currentList.size;
+                }
+
+            }
+
+            head = prevList.head;
+            tail = prevList.tail;
+            size = prevList.length();
+        }
+
+        public void reverseKGroupRecursively(int k, int size, Node cur, Node nex, Node pre, Node dummyNode)
+        {
+            // input > 1-->2-->3-->4-->5-->6-->7-->
+            //Result > 2 
+            if (head == null || k == 1) return;
+            if (head != null && dummyNode == null)
+            {
+                dummyNode = new Node(0)
+                {
+                    next = head
+                };
+                cur = dummyNode;
+                nex = dummyNode;
+                pre = dummyNode;
+
+            }
+            if (size < k)
+            {
+                head = dummyNode.next;
+                return;
+            }
+            else
+            {
+                cur = pre.next;
+                nex = cur.next;
+                for (int i = 1; i < k; i++)
+                {
+                    cur.next = nex.next;
+                    nex.next = pre.next;
+                    pre.next = nex;
+                    nex = cur.next;
+                }
+                pre = cur;
+                size -= k;
+
+            }
+
+
+            reverseKGroupRecursively(k, size, cur, nex, pre, dummyNode);
+        }
+
 
         //time complexity O(n); space complexity O(1)
         public void display()
