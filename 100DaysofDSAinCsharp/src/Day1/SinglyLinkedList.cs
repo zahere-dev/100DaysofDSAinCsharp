@@ -5,9 +5,9 @@ namespace _100DaysofDSAinCsharp.src.Day1
 {
     public class SinglyLinkedList
     {
-        private Node head;
-        private Node tail;
-        private int size;
+        public Node head;
+        public Node tail;
+        public int size;
 
         public SinglyLinkedList()
         {
@@ -135,6 +135,10 @@ namespace _100DaysofDSAinCsharp.src.Day1
             {
                 removeFirst();
             }
+            else if (size == position)
+            {
+                removeLast();
+            }
             else
             {
                 var currentNode = head;
@@ -143,7 +147,9 @@ namespace _100DaysofDSAinCsharp.src.Day1
                 {
                     if (counter == position - 1)
                     {
-                        currentNode.next = currentNode.next.next;
+                        //currentNode.next = currentNode.next.next == null ? null : currentNode.next.next;
+                        var nextNode = currentNode.next;
+                        currentNode = nextNode.next == null ? null : nextNode.next;
                         break;
                     }
                     currentNode = currentNode.next;
