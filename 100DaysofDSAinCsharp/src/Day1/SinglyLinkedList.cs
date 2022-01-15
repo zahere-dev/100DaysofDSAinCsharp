@@ -253,6 +253,31 @@ namespace _100DaysofDSAinCsharp.src.Day1
             return -1;
         }
 
+        public int RemoveElementByValue(int element)
+        {
+            int counter = 0;
+            if (!isEmpty())
+            {
+                var currentNode = head;
+
+                while (currentNode != null)
+                {
+                    if (currentNode.element == element)
+                    {
+                        removeAtGivenPosition(counter);
+                        counter--;
+                    }
+
+                    currentNode = currentNode.next;
+                    counter++;
+
+                }
+
+            }
+
+            return -1;
+        }
+
 
         private bool recursiveFunc(int elementToFind, Node node)
         {
