@@ -17,9 +17,13 @@ Hi there! My name is Zahere. I am a journalist-turned-Software Engineer striving
       - [x] K-Reverse Dobuly Linked List - Iteratively and Recursively
   - [x] Day5 - 14/1/2022 -> Advanced Operations On Linked List
       - [x] Add 2 LinkedList
-  - [ ] Day6 - 15/1/2022 - Rearrange LinkedList
-  
-      
+  - [x] Day6 - 15/1/2022 -
+      - [x] LinkedList Palindrom
+      - [x] Middle Of LinkedList
+  - [ ] Day6 - 16/1/2022 -
+      - [ ] Merge LinkedList
+      - [ ] Shift LinkedList
+      - [ ] LRU Cache
 - 15 days of Recursion and BackTracking
 - 5 days of Array
 - 5 days of Sorting Algorithms
