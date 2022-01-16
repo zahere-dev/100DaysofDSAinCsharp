@@ -20,8 +20,9 @@ Hi there! My name is Zahere. I am a journalist-turned-Software Engineer striving
   - [x] Day6 - 15/1/2022 -
       - [x] LinkedList Palindrom
       - [x] Middle Of LinkedList
-  - [ ] Day6 - 16/1/2022 -
-      - [ ] Merge LinkedList
+  - [x] Day7 - 16/1/2022 -
+      - [x] Merge LinkedList
+  - [ ] Day8 - 17/1/2022 -      
       - [ ] Shift LinkedList
       - [ ] LRU Cache
 - 15 days of Recursion and BackTracking
