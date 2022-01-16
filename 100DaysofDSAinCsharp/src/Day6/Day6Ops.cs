@@ -37,7 +37,7 @@ namespace _100DaysofDSAinCsharp.src.Day6
             sll.addLast(7);
             sll.display();
 
-            var currentNode = RemoveGivenElements.RemoveElements(sll.head, 7);
+            var currentNode = RemoveGivenElements.RemoveElements(sll.head, 6);
             while (currentNode != null)
             {
                 Console.Write($"{currentNode.element}-->");
