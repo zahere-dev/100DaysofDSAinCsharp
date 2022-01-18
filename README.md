@@ -22,9 +22,20 @@ Hi there! My name is Zahere. I am a journalist-turned-Software Engineer striving
       - [x] Middle Of LinkedList
   - [x] Day7 - 16/1/2022 -
       - [x] Merge LinkedList
-  - [ ] Day8 - 17/1/2022 -      
-      - [ ] Shift LinkedList
+  - [x] Day8 - 17/1/2022 -      
+      - [x] OddEven LinkedList
+  - [x] Day9 - 18/1/2022 -      
+      - [x] Zip LinkedList
+  - [ ] Day10 - 19/1/2022 -      
+      - [ ] Node Swap 
+  - [ ] Day11 - 20/1/2022 -      
+      - [ ] Rerrange LinkedList
+  - [ ] Day12 - 21/1/2022 -      
       - [ ] LRU Cache
+  - [ ] Day13 - 21/1/2022 -      
+      - [ ] Revision of all the above problems in a separate class with test cases + few top leetcode questions if possible
+  - [ ] Day14 - 21/1/2022 -      
+      - [ ] Array -> Theory and Basic Operations
 - 15 days of Recursion and BackTracking
 - 5 days of Array
 - 5 days of Sorting Algorithms
