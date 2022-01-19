@@ -1,4 +1,4 @@
-﻿using _100DaysofDSAinCsharp.src.Day6;
+﻿using _100DaysofDSAinCsharp.src.Day06;
 
 namespace _100DaysofDSAinCsharp
 {
