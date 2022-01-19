@@ -4,7 +4,7 @@ Hi there! My name is Zahere. I am a journalist-turned-Software Engineer striving
 
 ## Roadmap
 **Start Date -> 8/1/2022** -----> **End Date -> 27/4/2022**
-- 10 days of linkedlist
+- 13 days of linkedlist
   - [x] Day1 - 8/1/2022 -> Construct a SinglyLinkedList
   - [x] Day2 - 9/1/2022 -> Construct a DoublyLinkedList and CircularLinkedList
   - [x] Day3 - 10/1/2022 -> Reverse Operations On Linked List
