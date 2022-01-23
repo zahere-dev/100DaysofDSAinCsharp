@@ -6,8 +6,4 @@
     <RootNamespace>_100DaysofDSAinCsharp</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="src\NewFolder\" />
-  </ItemGroup>
-
 </Project>

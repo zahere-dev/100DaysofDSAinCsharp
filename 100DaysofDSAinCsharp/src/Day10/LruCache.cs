@@ -16,7 +16,6 @@ namespace _100DaysofDSAinCsharp.src.Day10
             }
         }
 
-
         //Create head and tail nodes with dummy key values
         private readonly LruNode head = new LruNode(0, 0);
         private readonly LruNode tail = new LruNode(0, 0);
@@ -32,7 +31,6 @@ namespace _100DaysofDSAinCsharp.src.Day10
             head.next = tail;
             tail.next = head;
         }
-
 
         /// <summary>
         /// Get node value by given key else return -1
@@ -55,7 +53,6 @@ namespace _100DaysofDSAinCsharp.src.Day10
             return -1;
 
         }
-
 
         public void put(int key, int value)
         {

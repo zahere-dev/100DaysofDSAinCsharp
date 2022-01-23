@@ -1,4 +1,5 @@
-﻿using _100DaysofDSAinCsharp.src.Day02;
+﻿using _100DaysofDSAinCsharp.src.Day01;
+using _100DaysofDSAinCsharp.src.Day02;
 
 namespace _100DaysofDSAinCsharp.src.Day04
 {
@@ -6,7 +7,7 @@ namespace _100DaysofDSAinCsharp.src.Day04
     {
         public static void Run()
         {
-            //SinglyLinkedList sll = new SinglyLinkedList();
+            SinglyLinkedList sll = new SinglyLinkedList();
             //sll.addLast(1);
             //sll.addLast(2);
             //sll.addLast(3);
@@ -15,7 +16,7 @@ namespace _100DaysofDSAinCsharp.src.Day04
             //sll.addLast(6);
             //sll.addLast(7);
             //sll.display();
-            //sll.reverseKGroupByCreatingNewList(3);
+            sll.reverseKGroupByCreatingNewList(3);
             //sll.display();
             ////sll.reverseKGroupOnTheSameList(3);
             ////sll.display();
