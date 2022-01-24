@@ -32,8 +32,13 @@ Hi there! My name is Zahere. I am a journalist-turned-Software Engineer striving
       - [ ] Rerrange LinkedList
   - [x] Day12 - 23/1/2022 -
       - [x] Revision of all the above problems in a separate class with test cases + few top leetcode questions if possible
-  - [ ] Day13 - 24/1/2022 -      
-      - [ ] Array -> Theory and Basic Operations  
+  - [x] Day13 - 24/1/2022 -      
+      - [x] - Find Duplicate Number
+      - [x] - Sort Array of 1s and 2s - Dutch National Flag Algorithm
+  - [ ] Day14 - 25/1/2022 -      
+      - [ ] - Set Matrix Zeroes
+      - [ ] - Kadane's Algorithm
+      - [ ] - Pascal Triangle
 - 15 days of Recursion and BackTracking
 - 5 days of Array
 - 5 days of Sorting Algorithms
