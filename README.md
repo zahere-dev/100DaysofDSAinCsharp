@@ -35,10 +35,11 @@ Hi there! My name is Zahere. I am a journalist-turned-Software Engineer striving
   - [x] Day13 - 24/1/2022 -      
       - [x] - Find Duplicate Number
       - [x] - Sort Array of 1s and 2s - Dutch National Flag Algorithm
-  - [ ] Day14 - 25/1/2022 -      
-      - [ ] - Set Matrix Zeroes
-      - [ ] - Kadane's Algorithm
+  - [x] Day14 - 27/1/2022 -
+      - [x] - Kadane's Algorithm      
+  - [ ] Day15 - 28/1/2022 -      
       - [ ] - Pascal Triangle
+      - [ ] - Set Matrix Zeroes
 - 15 days of Recursion and BackTracking
 - 5 days of Array
 - 5 days of Sorting Algorithms
