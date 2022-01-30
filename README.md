@@ -36,16 +36,21 @@ Hi there! My name is Zahere. I am a journalist-turned-Software Engineer striving
       - [x] - Find Duplicate Number
       - [x] - Sort Array of 1s and 2s - Dutch National Flag Algorithm
   - [x] Day14 - 27/1/2022 -
-      - [x] - Kadane's Algorithm      
-  - [x] Day15 - 29/1/2022 -      
+      - [x] - Kadane's Algorithm
+  - [x] Day15 - 28/1/2022 -
+      - [x] - Recursion Fundamentals
+  - [x] Day16 - 29/1/2022 -      
       - [x] - Building Binary Search Tree
       - [x] - PreOrder Traversal
       - [x] - PostOrder Traversal
       - [x] - InOrder Traversal
       - [x] - Search Interative Traversal
       - [x] - Search Recursive Traversal
-  - [ ] Day16 - 30/1/2022 -      
-      - [ ] - Deleteing Node in BST
+  - [x] Day17 - 30/1/2022 -      
+      - [x] - Deleteing Node in BST
+  - [ ] Day18 - 31/1/2022 -      
+      - [ ] - Count of nodes in BST
+      - [ ] - Find Height of BST
 - 15 days of Recursion and BackTracking
 - 5 days of Array
 - 5 days of Sorting Algorithms
