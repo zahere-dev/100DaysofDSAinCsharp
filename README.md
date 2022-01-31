@@ -48,9 +48,9 @@ Hi there! My name is Zahere. I am a journalist-turned-Software Engineer striving
       - [x] - Search Recursive Traversal
   - [x] Day17 - 30/1/2022 -      
       - [x] - Deleteing Node in BST
-  - [ ] Day18 - 31/1/2022 -      
-      - [ ] - Count of nodes in BST
-      - [ ] - Find Height of BST
+  - [x] Day18 - 31/1/2022 -      
+      - [x] - Count of nodes in BST
+      - [x] - Find Height of BST
 - 15 days of Recursion and BackTracking
 - 5 days of Array
 - 5 days of Sorting Algorithms

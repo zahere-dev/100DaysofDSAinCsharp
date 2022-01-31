@@ -22,6 +22,7 @@ namespace _100DaysofDSAinCsharp.src.Day17
 
             if (p == null) return false;
 
+            //if the node to be deleted is a non-leaf node
             if (p.left != null && p.right != null)
             {
                 TreeNode s = p.left;
@@ -37,6 +38,7 @@ namespace _100DaysofDSAinCsharp.src.Day17
                 pp = ps;
 
             }
+
             TreeNode c = null;
             if (p.left != null) c = p.left;
             else c = p.right;
