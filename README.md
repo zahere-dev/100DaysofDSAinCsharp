@@ -51,6 +51,11 @@ Hi there! My name is Zahere. I am a journalist-turned-Software Engineer striving
   - [x] Day18 - 31/1/2022 -      
       - [x] - Count of nodes in BST
       - [x] - Find Height of BST
+  - [x] Day19 - 3/2/2022 -      
+      - [x] - Nth Fibonacci
+  - [ ] Day20 - 4/2/2022 -      
+      - [ ] - Product Sum
+      - [ ] - Permutations
 - 15 days of Recursion and BackTracking
 - 5 days of Array
 - 5 days of Sorting Algorithms
